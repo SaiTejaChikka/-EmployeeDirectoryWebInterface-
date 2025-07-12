@@ -1,0 +1,300 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f6f8fa;
+    margin: 0;
+    color: #222;
+}
+
+header {
+    background: #2563eb;
+    color: #fff;
+    padding: 32px 0 24px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+    margin-bottom: 32px;
+}
+
+header h1 {
+    margin: 0 0 12px 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+#add-employee-btn {
+    background: linear-gradient(90deg, #22c55e 60%, #16a34a 100%);
+    box-shadow: 0 4px 16px rgba(34,197,94,0.13);
+}
+#add-employee-btn:hover {
+    background: linear-gradient(90deg, #16a34a 60%, #22c55e 100%);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px 32px 16px;
+}
+
+.controls {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+#search {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 220px;
+    transition: border 0.2s;
+}
+#search:focus {
+    border: 1.5px solid #2563eb;
+    outline: none;
+}
+
+#filter-btn {
+    background: linear-gradient(90deg, #fbbf24 60%, #f59e1b 100%);
+}
+#filter-btn:hover {
+    background: linear-gradient(90deg, #f59e1b 60%, #fbbf24 100%);
+}
+
+.sort-controls select {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+.employee-card {
+    border: 1.5px solid #e0e7ef;
+    border-radius: 14px;
+    padding: 24px 20px;
+    margin: 0;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(37,99,235,0.06);
+    transition: box-shadow 0.22s, transform 0.18s, border 0.18s;
+    position: relative;
+    overflow: hidden;
+}
+.employee-card:hover {
+    box-shadow: 0 8px 32px rgba(37,99,235,0.18);
+    border: 1.5px solid #2563eb;
+    transform: translateY(-3px) scale(1.012);
+}
+.employee-card h3 {
+    margin-bottom: 8px;
+    color: #2563eb;
+    font-size: 1.25rem;
+}
+.employee-card .actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+}
+.employee-card .edit-btn {
+    background: #fbbf24;
+    color: #222;
+    border-radius: 5px;
+    padding: 7px 16px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.employee-card .edit-btn:hover {
+    background: #f59e1b;
+}
+.employee-card .delete-btn {
+    background: #dc2626;
+    color: #fff;
+    border-radius: 5px;
+    padding: 7px 16px;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.employee-card .delete-btn:hover {
+    background: #b91c1c;
+}
+
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+#pagination {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+#pagination button {
+    background: linear-gradient(90deg, #2563eb 60%, #1d4ed8 100%);
+    box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+}
+#pagination button:disabled {
+    background: #cbd5e1;
+    color: #888;
+    cursor: not-allowed;
+}
+#pagination button:hover {
+    background: #1d4ed8;
+}
+#pagination select {
+    padding: 7px 12px;
+    border-radius: 5px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+}
+
+/* Modal & Form Styling */
+.modal {
+    background: rgba(37, 99, 235, 0.18);
+    backdrop-filter: blur(2px);
+    transition: background 0.3s;
+}
+.modal-content {
+    background: #fff;
+    padding: 32px 28px 24px 28px;
+    border-radius: 10px;
+    min-width: 320px;
+    max-width: 95vw;
+    box-shadow: 0 8px 32px rgba(37,99,235,0.13);
+    border: 1.5px solid #e0e7ef;
+    animation: modalIn 0.25s cubic-bezier(.4,2,.6,1) both;
+}
+@keyframes modalIn {
+    0% { transform: translateY(40px) scale(0.98); opacity: 0; }
+    100% { transform: none; opacity: 1; }
+}
+#form-title {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #2563eb;
+    font-size: 1.5rem;
+}
+.form-group {
+    margin-bottom: 18px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #2563eb;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.2s, box-shadow 0.2s;
+    background: #f8fafc;
+}
+.form-group input:focus {
+    border: 1.5px solid #2563eb;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+    background: #fff;
+}
+.error-message {
+    color: #dc2626;
+    font-size: 0.95em;
+    margin-top: 3px;
+}
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 18px;
+}
+#cancel-btn {
+    background: #e5e7eb;
+    color: #222;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#cancel-btn:hover {
+    background: #d1d5db;
+}
+.form-actions button[type="submit"] {
+    background: linear-gradient(90deg, #2563eb 60%, #1d4ed8 100%);
+    color: #fff;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.form-actions button[type="submit"]:hover {
+    background: linear-gradient(90deg, #1d4ed8 60%, #2563eb 100%);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Success Message Styling */
+#success-message {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #22c55e;
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 16px rgba(34,197,94,0.13);
+    z-index: 2000;
+    opacity: 0.98;
+    transition: opacity 0.3s, top 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    main {
+        padding: 0 6px 32px 6px;
+    }
+    .grid-view {
+        gap: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .grid-view {
+        grid-template-columns: 1fr;
+    }
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    #pagination {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+@media (max-width: 480px) {
+    .employee-card {
+        margin: 0;
+        padding: 10px 6px;
+    }
+    .modal-content {
+        padding: 16px 6px 12px 6px;
+    }
+    .form-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

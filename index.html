@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Employee Directory</h1>
+        <button id="add-employee-btn">+ Add Employee</button>
+    </header>
+
+    <main>
+        <!-- Search and Filters -->
+        <div class="controls">
+            <input type="text" id="search" placeholder="Search...">
+            <button id="filter-btn">Filter</button>
+            <div class="sort-controls">
+                <select id="sort-by">
+                    <option value="firstName">First Name</option>
+                    <option value="department">Department</option>
+                </select>
+                <button id="sort-direction-btn" title="Toggle sort direction">↑</button>
+            </div>
+            <select id="filter-department">
+                <option value="">All Departments</option>
+                <option value="HR">HR</option>
+                <option value="IT">IT</option>
+                <option value="Finance">Finance</option>
+                <option value="Marketing">Marketing</option>
+                <!-- Add more as needed -->
+            </select>
+            <select id="filter-role">
+                <option value="">All Roles</option>
+                <option value="Manager">Manager</option>
+                <option value="Developer">Developer</option>
+                <option value="Designer">Designer</option>
+                <option value="Analyst">Analyst</option>
+                <!-- Add more as needed -->
+            </select>
+        </div>
+
+        <!-- Employee List -->
+        <div id="employee-list" class="grid-view">
+            <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Pagination -->
+        <div id="pagination">
+            <button id="prev-page">Previous</button>
+            <span id="current-page">1</span>
+            <button id="next-page">Next</button>
+            <select id="items-per-page">
+                <option value="5">5 per page</option>
+                <option value="10" selected>10 per page</option>
+                <option value="20">20 per page</option>
+            </select>
+        </div>
+    </main>
+
+    <!-- Add/Edit Form (Initially Hidden) -->
+    <div id="form-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="form-title">Add Employee</h2>
+            <form id="employee-form">
+                <input type="hidden" id="employee-id">
+                <div class="form-group">
+                    <label for="first-name">First Name*</label>
+                    <input type="text" id="first-name" required>
+                    <div class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name*</label>
+                    <input type="text" id="last-name" required>
+                    <div class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" required>
+                    <div class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department*</label>
+                    <input type="text" id="department" required>
+                    <div class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" id="role">
+                    <div class="error-message"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-btn">Cancel</button>
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
