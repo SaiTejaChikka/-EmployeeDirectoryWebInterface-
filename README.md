@@ -1,4 +1,4 @@
-﻿# -EmployeeDirectoryWebInterface-
+
  # Employee Directory Web Interface
 
 A modern, responsive web application for managing employee records. Built with vanilla HTML, CSS, and JavaScript.
